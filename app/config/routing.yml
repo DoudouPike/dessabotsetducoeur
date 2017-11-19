@@ -1,6 +1,6 @@
 advert:
-    resource: "@AdvertBundle/Resources/config/routing.yml"
-    prefix:   /
+    resource: "@AdvertBundle/Controller/"
+    type: annotation
 
 core:
     resource: "@CoreBundle/Controller/"
