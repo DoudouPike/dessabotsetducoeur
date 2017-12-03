@@ -1,8 +1,7 @@
 # To get started with security, check out the documentation:
 # https://symfony.com/doc/current/security.html
 security:
-
-  encoders:
+    encoders:
         Symfony\Component\Security\Core\User\User: sha512
 
     # https://symfony.com/doc/current/security.html#b-configuring-how-users-are-loaded
