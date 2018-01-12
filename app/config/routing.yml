@@ -1,7 +1,3 @@
-advert:
-    resource: "@AdvertBundle/Controller/"
-    type: annotation
-
 core:
     resource: "@CoreBundle/Controller/"
     type: annotation
