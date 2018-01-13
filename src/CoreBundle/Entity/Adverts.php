@@ -5,12 +5,12 @@ namespace CoreBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * Advert
+ * Adverts
  *
  * @ORM\Table(name="advert")
- * @ORM\Entity(repositoryClass="CoreBundle\Repository\AdvertRepository")
+ * @ORM\Entity(repositoryClass="CoreBundle\Repository\AdvertsRepository")
  */
-class Advert
+class Adverts
 {
     /**
      * @var int
@@ -31,7 +31,7 @@ class Advert
     /**
      * @var string
      *
-     * @ORM\Column(name="description", type="text", length=2047)
+     * @ORM\Column(name="description_to_adopt", type="text", length=2047)
      */
     private $descriptionToAdopt;
 
@@ -41,6 +41,20 @@ class Advert
      * @ORM\Column(name="description_adopted", type="text", length=2047, nullable=true)
      */
     private $descriptionAdopted;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="date_creation", type="datetime")
+     */
+    private $dateCreation;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="date_adopted", type="datetime", nullable=true)
+     */
+    private $dateAdopted;
 
     /**
      * @var bool
@@ -54,13 +68,15 @@ class Advert
      *
      * @ORM\Column(name="active", type="boolean")
      */
-    private $active;
+    private $published;
 
+
+    private $images;
 
     /**
      * Get id
      *
-     * @return int
+     * @return integer
      */
     public function getId()
     {
@@ -72,7 +88,7 @@ class Advert
      *
      * @param string $name
      *
-     * @return Advert
+     * @return Adverts
      */
     public function setName($name)
     {
@@ -92,27 +108,27 @@ class Advert
     }
 
     /**
-     * Set description
+     * Set descriptionToAdopt
      *
      * @param string $descriptionToAdopt
      *
-     * @return Advert
+     * @return Adverts
      */
-    public function setDescriptionToAdopt($$descriptionToAdopt)
+    public function setDescriptionToAdopt($descriptionToAdopt)
     {
-        $this->$descriptionToAdopt = $$descriptionToAdopt;
+        $this->descriptionToAdopt = $descriptionToAdopt;
 
         return $this;
     }
 
     /**
-     * Get $descriptionToAdopt
+     * Get descriptionToAdopt
      *
      * @return string
      */
     public function getDescriptionToAdopt()
     {
-        return $this->$descriptionToAdopt;
+        return $this->descriptionToAdopt;
     }
 
     /**
@@ -120,7 +136,7 @@ class Advert
      *
      * @param string $descriptionAdopted
      *
-     * @return Advert
+     * @return Adverts
      */
     public function setDescriptionAdopted($descriptionAdopted)
     {
@@ -140,11 +156,59 @@ class Advert
     }
 
     /**
+     * Set dateCreation
+     *
+     * @param \DateTime $dateCreation
+     *
+     * @return Adverts
+     */
+    public function setDateCreation($dateCreation)
+    {
+        $this->dateCreation = $dateCreation;
+
+        return $this;
+    }
+
+    /**
+     * Get dateCreation
+     *
+     * @return \DateTime
+     */
+    public function getDateCreation()
+    {
+        return $this->dateCreation;
+    }
+
+    /**
+     * Set dateAdopted
+     *
+     * @param \DateTime $dateAdopted
+     *
+     * @return Adverts
+     */
+    public function setDateAdopted($dateAdopted)
+    {
+        $this->dateAdopted = $dateAdopted;
+
+        return $this;
+    }
+
+    /**
+     * Get dateAdopted
+     *
+     * @return \DateTime
+     */
+    public function getDateAdopted()
+    {
+        return $this->dateAdopted;
+    }
+
+    /**
      * Set adopted
      *
      * @param boolean $adopted
      *
-     * @return Advert
+     * @return Adverts
      */
     public function setAdopted($adopted)
     {
@@ -156,7 +220,7 @@ class Advert
     /**
      * Get adopted
      *
-     * @return bool
+     * @return boolean
      */
     public function getAdopted()
     {
@@ -164,27 +228,26 @@ class Advert
     }
 
     /**
-     * Set active
+     * Set published
      *
-     * @param boolean $active
+     * @param boolean $published
      *
-     * @return Advert
+     * @return Adverts
      */
-    public function setActive($active)
+    public function setPublished($published)
     {
-        $this->active = $active;
+        $this->published = $published;
 
         return $this;
     }
 
     /**
-     * Get active
+     * Get published
      *
-     * @return bool
+     * @return boolean
      */
-    public function getActive()
+    public function getPublished()
     {
-        return $this->active;
+        return $this->published;
     }
 }
-

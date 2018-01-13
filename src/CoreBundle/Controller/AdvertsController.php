@@ -5,7 +5,7 @@ namespace CoreBundle\Controller;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 
-class AdvertController extends Controller
+class AdvertsController extends Controller
 {
     public function indexAction()
     {
