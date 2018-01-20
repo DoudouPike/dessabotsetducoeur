@@ -9,12 +9,9 @@ use Doctrine\ORM\Mapping as ORM;
  *
  * @ORM\Table(name="advert")
  * @ORM\Entity(repositoryClass="CoreBundle\Repository\AdvertsRepository")
- * @ORM\HasLifecycleCallbacks()
  */
 class Adverts
 {
-    /** ---------- PROPERTIES ---------- **/
-
     /**
      * @var int
      *
@@ -71,24 +68,7 @@ class Adverts
      * @ORM\JoinColumn(nullable=false)
      */
     private $categories;
-
-
-    /** ---------- EVENTS ---------- **/
-
-    /**
-     * Set dateCreation on creating new advert
-     *
-     * @return Adverts
-     *
-     * @ORM\PrePersist()
-     */
-    protected function setDateCreation()
-    {
-        $this->dateCreation = new \DateTime();
-    }
-
-
-    /** ---------- GETTER & SETTER ---------- **/
+    
 
     /**
      * Get id
@@ -173,6 +153,20 @@ class Adverts
     }
 
     /**
+     * Set dateCreation
+     *
+     * @param \DateTime $dateCreation
+     *
+     * @return Adverts
+     */
+    public function setDateCreation($dateCreation)
+    {
+        $this->dateCreation = $dateCreation;
+
+        return $this;
+    }
+
+    /**
      * Get dateCreation
      *
      * @return \DateTime
@@ -206,6 +200,29 @@ class Adverts
         return $this->dateAdopted;
     }
 
+    /**
+     * Set adopted
+     *
+     * @param boolean $adopted
+     *
+     * @return Adverts
+     */
+    public function setAdopted($adopted)
+    {
+        $this->adopted = $adopted;
+
+        return $this;
+    }
+
+    /**
+     * Get adopted
+     *
+     * @return boolean
+     */
+    public function getAdopted()
+    {
+        return $this->adopted;
+    }
 
     /**
      * Set published
@@ -229,29 +246,5 @@ class Adverts
     public function getPublished()
     {
         return $this->published;
-    }
-
-    /**
-     * Set categories
-     *
-     * @param \CoreBundle\Entity\Categories $categories
-     *
-     * @return Adverts
-     */
-    public function setCategories(\CoreBundle\Entity\Categories $categories)
-    {
-        $this->categories = $categories;
-
-        return $this;
-    }
-
-    /**
-     * Get categories
-     *
-     * @return \CoreBundle\Entity\Categories
-     */
-    public function getCategories()
-    {
-        return $this->categories;
     }
 }
