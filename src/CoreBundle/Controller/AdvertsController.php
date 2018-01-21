@@ -10,7 +10,19 @@ class AdvertsController extends Controller
 {
     public function indexAction()
     {
-        return $this->render('CoreBundle:advert:index.html.twig');
+        return $this->render('CoreBundle:adverts:index.html.twig');
+    }
+
+    /**
+     * @Route(path="/chevaux/a_adopter", name="Adverts_list")
+     */
+    public function listAction()
+    {
+        $em = $this->getDoctrine()->getManager();
+        $adverts = $em->getRepository('CoreBundle:Adverts')->findAll();
+        return $this->render('CoreBundle:adverts:list.html.twig', [
+            'adverts' => $adverts
+        ]);
     }
 
     /**
@@ -25,12 +37,12 @@ class AdvertsController extends Controller
         $advert->setDescriptionToAdopt('Description dispo adoption');
         $advert->setPublished(true);
 
-        $categories = $em->getRepository('CoreBundle:Categories')->find('1');
+        $categories = $em->getRepository('CoreBundle:Categories')->find(1);
         $advert->setCategories($categories);
 
         $em->persist($advert);
         $em->flush();
 
-        return $this->render('CoreBundle:advert:list.html.twig');
+        return $this->redirectToRoute('Adverts_list');
     }
 }

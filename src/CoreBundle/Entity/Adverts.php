@@ -7,7 +7,7 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * Adverts
  *
- * @ORM\Table(name="advert")
+ * @ORM\Table(name="adverts")
  * @ORM\Entity(repositoryClass="CoreBundle\Repository\AdvertsRepository")
  * @ORM\HasLifecycleCallbacks()
  */
@@ -76,13 +76,18 @@ class Adverts
     /** ---------- EVENTS ---------- **/
 
     /**
-     * Set dateCreation on creating new advert
+     * Set dateCreation on creating new adverts
      *
      * @return Adverts
      *
      * @ORM\PrePersist()
      */
     protected function setDateCreation()
+    {
+        $this->dateCreation = new \DateTime();
+    }
+
+    public function __construct()
     {
         $this->dateCreation = new \DateTime();
     }
