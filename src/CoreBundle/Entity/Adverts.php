@@ -7,7 +7,7 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * Adverts
  *
- * @ORM\Table(name="advert")
+ * @ORM\Table(name="adverts")
  * @ORM\Entity(repositoryClass="CoreBundle\Repository\AdvertsRepository")
  * @ORM\HasLifecycleCallbacks()
  */
@@ -73,9 +73,6 @@ class Adverts
     private $category;
 
 
-    /** ---------- EVENTS ---------- **/
-
-
     /** ---------- GETTER & SETTER ---------- **/
 
     /**
@@ -85,6 +82,8 @@ class Adverts
     {
         $this->dateCreation = new \DateTime();
     }
+
+    /** ---------- GETTER & SETTER ---------- **/
 
     /**
      * Get id
@@ -244,7 +243,7 @@ class Adverts
      *
      * @return Adverts
      */
-    public function setCategory(\CoreBundle\Entity\Categories $category)
+    public function setCategory(Categories $category)
     {
         $this->category = $category;
         return $this;

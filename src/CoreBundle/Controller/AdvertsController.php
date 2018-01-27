@@ -16,7 +16,7 @@ class AdvertsController extends Controller
         $em = $this->getDoctrine()->getManager();
         $categories = $em->getRepository('CoreBundle:Categories')->find('1');
         $adverts_list = $em->getRepository('CoreBundle:Adverts')->findBy(['category' => $categories]);
-        return $this->render('CoreBundle:advert:list.html.twig', [
+        return $this->render('CoreBundle:adverts:list.html.twig', [
             'adverts_list' => $adverts_list
         ]);
     }
@@ -33,7 +33,7 @@ class AdvertsController extends Controller
         $advert->setDescriptionToAdopt('CACA');
         $advert->setPublished(true);
 
-        $categories = $em->getRepository('CoreBundle:Categories')->find('1');
+        $categories = $em->getRepository('CoreBundle:Categories')->find(1);
         $advert->setCategory($categories);
 
         $em->persist($advert);
