@@ -70,25 +70,21 @@ class Adverts
      * @ORM\ManyToOne(targetEntity="CoreBundle\Entity\Categories")
      * @ORM\JoinColumn(nullable=false)
      */
-    private $categories;
+    private $category;
 
 
     /** ---------- EVENTS ---------- **/
 
+
+    /** ---------- GETTER & SETTER ---------- **/
+
     /**
-     * Set dateCreation on creating new advert
-     *
-     * @return Adverts
-     *
-     * @ORM\PrePersist()
+     * Adverts constructor.
      */
-    protected function setDateCreation()
+    public function __construct()
     {
         $this->dateCreation = new \DateTime();
     }
-
-
-    /** ---------- GETTER & SETTER ---------- **/
 
     /**
      * Get id
@@ -232,26 +228,25 @@ class Adverts
     }
 
     /**
-     * Set categories
-     *
-     * @param \CoreBundle\Entity\Categories $categories
-     *
-     * @return Adverts
-     */
-    public function setCategories(\CoreBundle\Entity\Categories $categories)
-    {
-        $this->categories = $categories;
-
-        return $this;
-    }
-
-    /**
      * Get categories
      *
      * @return \CoreBundle\Entity\Categories
      */
-    public function getCategories()
+    public function getCategory()
     {
-        return $this->categories;
+        return $this->category;
+    }
+
+    /**
+     * Set category
+     *
+     * @param \CoreBundle\Entity\Categories $category
+     *
+     * @return Adverts
+     */
+    public function setCategory(\CoreBundle\Entity\Categories $category)
+    {
+        $this->category = $category;
+        return $this;
     }
 }

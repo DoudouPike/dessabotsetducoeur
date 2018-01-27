@@ -1,42 +1,64 @@
 <!DOCTYPE html>
 <html>
-  <head>
+<head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>{% block title %}Des Sabots et du Coeur{% endblock %}</title>
+    <title>DS&DC - {% block title %}Des Sabots et du Cœur{% endblock %}</title>
 
     {% block stylesheets %}
-      <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="{{ asset('assets/plugins/bootstrap-4.0.0-alpha.6-dist/css/bootstrap-grid.min.css') }}" type="text/css">
+        <link rel="stylesheet" href="{{ asset('assets/plugins/bootstrap-4.0.0-alpha.6-dist/css/bootstrap.min.css') }}" type="text/css">
+        <link rel="stylesheet" href="{{ asset('assets/plugins/bootstrap-4.0.0-alpha.6-dist/css/bootstrap-reboot.min.css') }}" type="text/css">
+        <link rel="stylesheet" href="{{ asset('assets/plugins/startbootstrap-business-casual-gh-pages/css/business-casual.min.css') }}" type="text/css">
+        {#<link rel="stylesheet" href="{{ asset('assets/plugins/startbootstrap-business-casual-gh-pages/scss/_global.scss') }}" type="text/css">#}
+        {#<link rel="stylesheet" href="{{ asset('assets/plugins/startbootstrap-business-casual-gh-pages/scss/_intro.scss') }}" type="text/css">#}
+        <link rel="stylesheet" href="{{ asset('assets/plugins/startbootstrap-business-casual-gh-pages/scss/_navbar.scss') }}" type="text/css">
+        {#<link rel="stylesheet" href="{{ asset('assets/plugins/startbootstrap-business-casual-gh-pages/scss/_footer.scss') }}" type="text/css">#}
+        {#<link rel="stylesheet" href="{{ asset('assets/plugins/startbootstrap-business-casual-gh-pages/scss/_mixins.scss') }}" type="text/css">#}
+        {#<link rel="stylesheet" href="{{ asset('assets/plugins/startbootstrap-business-casual-gh-pages/scss/_products.scss') }}" type="text/css">#}
+        {#<link rel="stylesheet" href="{{ asset('assets/plugins/startbootstrap-business-casual-gh-pages/scss/_store.scss') }}" type="text/css">#}
+        {#<link rel="stylesheet" href="{{ asset('assets/plugins/startbootstrap-business-casual-gh-pages/scss/_variables.scss') }}" type="text/css">#}
+        {#<link rel="stylesheet" href="{{ asset('assets/plugins/startbootstrap-business-casual-gh-pages/scss/_about.scss') }}" type="text/css">#}
+        {#<link rel="stylesheet" href="{{ asset('assets/plugins/startbootstrap-business-casual-gh-pages/scss/_bootstrap-overrides.scss') }}" type="text/css">#}
+        {#<link rel="stylesheet" href="{{ asset('assets/plugins/startbootstrap-business-casual-gh-pages/scss/_buttons.scss') }}" type="text/css">#}
+        {#<link rel="stylesheet" href="{{ asset('assets/plugins/startbootstrap-business-casual-gh-pages/scss/_cta.scss') }}" type="text/css">#}
     {% endblock %}
-  </head>
+</head>
 
-  <body>
-  <div class="container">
+<body>
+<div class="container">
+    <nav id="mainNav" class="navbar navbar-expand-lg navbar-dark py-lg-4">
+        <div class="container">
+            <div id="menu" class="collapse navbar-collapse">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item active px-lg-4">
+                        <a href="{{ path('Core_index') }}" class="nav-link text-uppercase text-expanded">Accueil</a>
+                    </li>
+                    <li class="nav-item px-lg-4">
+                        <a href="{{ path('Adverts_toAdopt') }}" class="nav-link text-uppercase text-expanded">Chevaux à adopter</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
     <div class="row">
-      <div id="menu" class="col-md-12">
-        <h3>Les annonces</h3>
-        <ul class="nav nav-pills nav-stacked">
-          <li><a href="{{ path('Core_index') }}">Accueil</a></li>
-        </ul>
-      </div>
-    </div>
-    <div class="row">
-      <div id="content" class="col-md-offset-2 col-md-10 col-md-offset-2">
-        {% block body %}
-        {% endblock %}
-      </div>
+        <div id="content" class="col-md-offset-2 col-md-10 col-md-offset-2">
+            {% block body %}
+            {% endblock %}
+        </div>
     </div>
 
     <footer>
-      <p>© {{ 'now'|date('Y') }}</p>
+        <p>© {{ 'now'|date('Y') }}</p>
     </footer>
-  </div>
+</div>
 
-  {% block javascripts %}
+{% block javascripts %}
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
-  {% endblock %}
+{% endblock %}
 
-  </body>
+</body>
 </html>

@@ -8,9 +8,17 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 
 class AdvertsController extends Controller
 {
-    public function indexAction()
+    /**
+     * @Route(path="/chevaux/a_adopter", name="Adverts_toAdopt")
+     */
+    public function listAction()
     {
-        return $this->render('CoreBundle:advert:index.html.twig');
+        $em = $this->getDoctrine()->getManager();
+        $categories = $em->getRepository('CoreBundle:Categories')->find('1');
+        $adverts_list = $em->getRepository('CoreBundle:Adverts')->findBy(['category' => $categories]);
+        return $this->render('CoreBundle:advert:list.html.twig', [
+            'adverts_list' => $adverts_list
+        ]);
     }
 
     /**
@@ -21,16 +29,16 @@ class AdvertsController extends Controller
         $em = $this->getDoctrine()->getManager();
 
         $advert = new Adverts();
-        $advert->setName('Annonce test');
-        $advert->setDescriptionToAdopt('Description dispo adoption');
+        $advert->setName('CACA');
+        $advert->setDescriptionToAdopt('CACA');
         $advert->setPublished(true);
 
         $categories = $em->getRepository('CoreBundle:Categories')->find('1');
-        $advert->setCategories($categories);
+        $advert->setCategory($categories);
 
         $em->persist($advert);
         $em->flush();
 
-        return $this->render('CoreBundle:advert:list.html.twig');
+        return $this->redirectToRoute('Adverts_toAdopt');
     }
 }
