@@ -14,7 +14,7 @@ class AdvertsController extends Controller
     public function listAction()
     {
         $em = $this->getDoctrine()->getManager();
-        $categories = $em->getRepository('CoreBundle:Categories')->find('1');
+        $categories = $em->getRepository('CoreBundle:Categories')->find(1);
         $adverts_list = $em->getRepository('CoreBundle:Adverts')->findBy(['category' => $categories]);
         return $this->render('CoreBundle:adverts:list.html.twig', [
             'adverts_list' => $adverts_list
