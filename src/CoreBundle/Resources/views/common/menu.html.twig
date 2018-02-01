@@ -1,14 +1,35 @@
-<nav id="mainNav" class="">
-  <div class="container">
-    <div id="menu" class="">
-      <ul class="navbar-nav mx-auto">
-        <li class="nav-item active px-lg-4">
-          <a href="{{ path('Core_index') }}" class="nav-link text-uppercase text-expanded">Accueil</a>
-        </li>
-        <li class="nav-item px-lg-4">
-          <a href="{{ path('Adverts_toAdopt') }}" class="nav-link text-uppercase text-expanded">Chevaux à adopter</a>
-        </li>
-      </ul>
+<nav class="navbar navbar-ct-green" role="navigation">
+    <div class="container">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li class="active">
+                        <a href="{{ path('Core_index') }}" class="nav-link text-uppercase text-expanded">Accueil</a>
+                    </li>
+                    <li>
+                        <a href="{{ path('Adverts_toAdopt') }}" class="nav-link text-uppercase text-expanded">Chevaux à adopter</a>
+                    </li>
+                    <li class="dropdown">
+                        <ul class="dropdown-menu">
+                            <li><a href="#">Truc</a></li>
+                            <li><a href="#">Bidule</a></li>
+                            <li><a href="#">Machin</a></li>
+                            <li class="divider"></li>
+                            <li><a href="#">Chose</a></li>
+                            <li class="divider"></li>
+                            <li><a href="#">Chouette</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
     </div>
-  </div>
 </nav>
