@@ -18,12 +18,19 @@
 </head>
 <body>
     <div class="container">
-        <h1>Des sabots et du Cœur</h1>
+        <div class="row">
+            <div class="col-md-9">
+                <h1>
+                    Des Sabots et du Cœur
+                    <small class="subtitle">Association de placement d'équidés basée dans le Haut-Rhin (68).</small>
+                </h1>
+            </div>
+        </div>
         <div id="navbar">
             {% include 'CoreBundle:common:menu.html.twig' %}
         </div>
         <div class="row">
-            <div id="content" class="col-md-offset-2 col-md-10 col-md-offset-2">
+            <div class="col-md-offset-2 col-md-10 col-md-offset-2">
                 {% block body %}
                 {% endblock %}
             </div>

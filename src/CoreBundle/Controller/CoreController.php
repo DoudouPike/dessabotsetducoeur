@@ -12,14 +12,6 @@ class CoreController extends Controller
      */
     public function indexAction()
     {
-        return $this->render('CoreBundle::index.html.twig');
-    }
-
-    /**
-     * @Route(path="/ajax", name="Core_ajax")
-     */
-    public function ajaxAction()
-    {
-        return $this->render('CoreBundle::ajax.html.twig');
+        return $this->render('CoreBundle:home:index.html.twig');
     }
 }
