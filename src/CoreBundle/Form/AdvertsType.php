@@ -22,18 +22,18 @@ class AdvertsType extends AbstractType
         $builder
             ->add('name', TextType::class)
             ->add('descriptionToAdopt', TextType::class)
-            /*->add('descriptionAdopted', TextType::class, [
+            ->add('descriptionAdopted', TextType::class, [
                 'required' => false
-            ])*/
-            /*->add('dateCreation', DateType::class, [
+            ])
+            ->add('dateCreation', DateType::class, [
                 'mapped' => 'false',
                 'widget' => 'choice'
-            ])*/
-            /*->add('dateAdopted', DateType::class, [
+            ])
+            ->add('dateAdopted', DateType::class, [
                 'mapped' => 'false',
                 'widget' => 'choice',
                 'required' => false
-            ])*/
+            ])
             ->add('published', CheckboxType::class)
             ->add('category', CategoriesType::class)
         ;
