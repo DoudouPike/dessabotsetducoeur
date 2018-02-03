@@ -8,6 +8,10 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Component\HttpFoundation\Request;
 
+/**
+ * Class AdvertsController
+ * @package CoreBundle\Controller
+ */
 class AdvertsController extends Controller
 {
     /**
@@ -25,6 +29,9 @@ class AdvertsController extends Controller
 
     /**
      * @Route(path="/chevaux/ajouter", name="Adverts_create")
+     *
+     * @param Request $request
+     * @return \Symfony\Component\HttpFoundation\RedirectResponse|\Symfony\Component\HttpFoundation\Response
      */
     public function addAction(Request $request)
     {
