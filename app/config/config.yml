@@ -70,4 +70,4 @@ easy_admin:
     entities:
         - CoreBundle\Entity\Adverts
         - CoreBundle\Entity\Categories
-        #- UserBundle\Entity\Users
+    site_name: 'Des Sabots et du Cœur' 
