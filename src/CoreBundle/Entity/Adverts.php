@@ -2,7 +2,9 @@
 
 namespace CoreBundle\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraint as Assets;
 
 /**
  * Adverts
@@ -28,6 +30,8 @@ class Adverts
      * @var string
      *
      * @ORM\Column(name="name", type="string", length=255)
+     *
+     * @Assets\NotBlank();
      */
     private $name;
 
@@ -67,11 +71,22 @@ class Adverts
     private $published;
 
     /**
+     * @var Categories
+     *
      * @ORM\ManyToOne(targetEntity="CoreBundle\Entity\Categories")
      * @ORM\JoinColumn(nullable=false)
      */
     private $category;
 
+    /**
+     * @var Images
+     *
+     * @ORM\ManyToMany(targetEntity="CoreBundle\Entity\Images", cascade={"persist"})
+     */
+    private $images;
+
+
+    /** ---------- FUNCTIONS ---------- **/
 
     /**
      * Adverts constructor.
@@ -79,7 +94,9 @@ class Adverts
     public function __construct()
     {
         $this->dateCreation = new \DateTime();
+        $this->images = new ArrayCollection();
     }
+
 
     /** ---------- GETTER & SETTER ---------- **/
 
@@ -245,5 +262,29 @@ class Adverts
     {
         $this->category = $category;
         return $this;
+    }
+
+    /**
+     * @return Images
+     */
+    public function getImages()
+    {
+        return $this->images;
+    }
+
+    /**
+     * @param Images $image
+     */
+    public function addImage(Images $image)
+    {
+        $this->images[] = $image;
+    }
+
+    /**
+     * @param Images $image
+     */
+    public function removeImage(Images $image)
+    {
+        $this->images->removeElement($image);
     }
 }

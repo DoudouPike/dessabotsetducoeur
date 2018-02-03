@@ -12,6 +12,8 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class Categories
 {
+    /** ---------- PROPERTIES ---------- **/
+
     /**
      * @var int
      *
@@ -28,10 +30,16 @@ class Categories
      */
     private $name;
 
+
+    /** ---------- FUNCTIONS ---------- **/
+
     public function __toString()
     {
         return $this->name;
     }
+
+
+    /** ---------- GETTER & SETTER ---------- **/
 
     /**
      * Get id

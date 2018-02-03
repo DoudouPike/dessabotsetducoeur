@@ -12,6 +12,8 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class Images
 {
+    /** ---------- PROPERTIES ---------- **/
+
     /**
      * @var int
      *
@@ -35,11 +37,13 @@ class Images
      */
     private $alt;
 
-    /**
-     * @ORM\ManyToOne(targetEntity="CoreBundle\Entity\Adverts")
-     * @ORM\JoinColumn(nullable=false)
-     */
-    private $advert;
+
+    /** ---------- FUNCTIONS ---------- **/
+
+
+
+
+    /** ---------- GETTER & SETTER ---------- **/
 
     /**
      * Get id
@@ -97,25 +101,6 @@ class Images
     public function getAlt()
     {
         return $this->alt;
-    }
-
-    /**
-     * @return Adverts
-     */
-    public function getAdvert()
-    {
-        return $this->advert;
-    }
-
-    /**
-     * @param Adverts $advert
-     * @return Images
-     */
-    public function setAdvert(Adverts $advert)
-    {
-        $this->advert = $advert;
-
-        return $this;
     }
 }
 
