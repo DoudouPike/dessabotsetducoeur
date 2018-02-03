@@ -3,8 +3,10 @@
 namespace CoreBundle\Controller;
 
 use CoreBundle\Entity\Adverts;
+use CoreBundle\Form\AdvertsType;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
+use Symfony\Component\HttpFoundation\Request;
 
 class AdvertsController extends Controller
 {
@@ -24,21 +26,29 @@ class AdvertsController extends Controller
     /**
      * @Route(path="/chevaux/ajouter", name="Adverts_create")
      */
-    public function addAction()
+    public function addAction(Request $request)
     {
-        $em = $this->getDoctrine()->getManager();
-
         $advert = new Adverts();
-        $advert->setName('CACA');
-        $advert->setDescriptionToAdopt('CACA');
-        $advert->setPublished(true);
 
-        $categories = $em->getRepository('CoreBundle:Categories')->find(1);
-        $advert->setCategory($categories);
+        $form = $this->createForm(AdvertsType::class, $advert);
 
-        $em->persist($advert);
-        $em->flush();
+        if($form->isSubmitted() && $form->handleRequest($request)->isValid()) {
 
-        return $this->redirectToRoute('Adverts_toAdopt');
+            $em = $this->getDoctrine()->getManager();
+
+            $category = $em->getRepository('CoreBundle:Categories')->findBy([
+                'name' => 'to_adopt'
+            ]);
+
+            $advert->setCategory($category);
+            $em->persist($advert);
+            $em->flush();
+
+            return $this->redirectToRoute('Adverts_toAdopt');
+        }
+
+        return $this->render('CoreBundle:adverts:create.html.twig', [
+            'form' => $form->createView()
+        ]);
     }
 }

@@ -73,8 +73,6 @@ class Adverts
     private $category;
 
 
-    /** ---------- GETTER & SETTER ---------- **/
-
     /**
      * Adverts constructor.
      */
