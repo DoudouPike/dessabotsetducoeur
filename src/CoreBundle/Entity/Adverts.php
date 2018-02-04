@@ -4,7 +4,7 @@ namespace CoreBundle\Entity;
 
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
-use Symfony\Component\Validator\Constraint as Assets;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * Adverts
@@ -31,7 +31,7 @@ class Adverts
      *
      * @ORM\Column(name="name", type="string", length=255)
      *
-     * @Assets\NotBlank();
+     * @Assert\NotBlank()
      */
     private $name;
 
