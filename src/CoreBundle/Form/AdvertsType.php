@@ -3,6 +3,7 @@
 namespace CoreBundle\Form;
 
 use CoreBundle\Entity\Categories;
+use Ivory\CKEditorBundle\Form\Type\CKEditorType;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
@@ -21,7 +22,12 @@ class AdvertsType extends AbstractType
     {
         $builder
             ->add('name', TextType::class)
-            ->add('descriptionToAdopt', TextType::class)
+            ->add('descriptionToAdopt', CKEditorType::class, [
+                    'config' => [
+                        'uiColor' => '#ffffff',
+                        //...
+                    ],
+                ])
             ->add('descriptionAdopted', TextType::class, [
                 'required' => false
             ])

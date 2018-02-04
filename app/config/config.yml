@@ -75,6 +75,9 @@ easy_admin:
             label: 'Chevaux'
             list:
                 title: "Liste des chevaux"
+            form:
+                fields:
+                 - { property: 'descriptionToAdopt', type: 'ckeditor' }
         Categories:
             class: CoreBundle\Entity\Categories
             label: 'Catégories'
