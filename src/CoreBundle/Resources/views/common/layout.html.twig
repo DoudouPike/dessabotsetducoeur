@@ -5,40 +5,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>DS&DC - {% block title %}Des Sabots et du Cœur{% endblock %}</title>
     {% block stylesheets %}
-        <link rel="stylesheet" href="{{ asset('assets/themes/get-shit-done-1.4.1/bootstrap3/css/font-awesome.css') }}" type="text/css">
         <link rel="stylesheet" href="{{ asset('assets/themes/get-shit-done-1.4.1/bootstrap3/css/bootstrap.min.css') }}" type="text/css">
         <link rel="stylesheet" href="{{ asset('assets/themes/get-shit-done-1.4.1/bootstrap3/css/bootstrap-theme.min.css') }}" type="text/css">
         <link rel="stylesheet" href="{{ asset('assets/themes/get-shit-done-1.4.1/assets/css/gsdk.css') }}" type="text/css">
     {% endblock %}
     {% block javascripts %}
+        <script src="{{ asset('assets/themes/fontawesome-5.0.6/svg-with-js/js/fontawesome-all.js') }}"></script>
         <script src="{{ asset('assets/themes/get-shit-done-1.4.1/jquery/jquery-1.10.2.js') }}"></script>
         <script src="{{ asset('assets/themes/get-shit-done-1.4.1/jquery/jquery-ui.custom.min.js') }}"></script>
         <script src={{ asset('assets/themes/get-shit-done-1.4.1/bootstrap3/js/bootstrap.min.js') }}></script>
     {% endblock %}
 </head>
 <body>
-    <div class="container">
-        <div class="row">
-            <div class="col-md-9">
-                <h1>
-                    Des Sabots et du Cœur
-                    <small class="subtitle">Association de placement d'équidés basée dans le Haut-Rhin (68).</small>
-                </h1>
-                <img src="{{ asset('assets/dist/images/logo.jpg') }}" alt="">
+    <div class="container-fluid">
+        <header>
+            <div id="navbar">
+                {% include 'CoreBundle:common:menu.html.twig' %}
             </div>
-        </div>
-        <div id="navbar">
-            {% include 'CoreBundle:common:menu.html.twig' %}
-        </div>
-        <div class="row">
-            <div class="col-md-offset-1 col-md-10 col-md-offset-1">
-                {% block body %}
-                {% endblock %}
+        </header>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-offset-1 col-md-10 col-md-offset-1">
+                    {% block body %}
+                    {% endblock %}
+                </div>
             </div>
+            <footer>
+                <p>© {{ 'now'|date('Y') }}</p>
+            </footer>
         </div>
-        <footer>
-            <p>© {{ 'now'|date('Y') }}</p>
-        </footer>
     </div>
 </body>
 </html>

@@ -23,32 +23,4 @@ class AdvertsController extends Controller
         ]);
     }
 
-    /**
-     * @Route(path="/chevaux/ajouter", name="Adverts_create")
-     */
-    public function addAction(Request $request)
-    {
-        $advert = new Adverts();
-
-        $form = $this->createForm(AdvertsType::class, $advert);
-
-        if($form->isSubmitted() && $form->handleRequest($request)->isValid()) {
-
-            $em = $this->getDoctrine()->getManager();
-
-            $category = $em->getRepository('CoreBundle:Categories')->findBy([
-                'name' => 'to_adopt'
-            ]);
-
-            $advert->setCategory($category);
-            $em->persist($advert);
-            $em->flush();
-
-            return $this->redirectToRoute('Adverts_toAdopt');
-        }
-
-        return $this->render('CoreBundle:adverts:create.html.twig', [
-            'form' => $form->createView()
-        ]);
-    }
 }
