@@ -18,8 +18,13 @@ body {
 
 }
 
-/*Header Navigation*/
+a {
 
+  text-decoration: none;
+
+}
+
+/*Header Navigation*/
 .headerNav{
 
   height: 210px;
@@ -52,9 +57,10 @@ body {
 
       h1{
 
-        width: 80vw;
+        width: 70vw;
         font-family: 'BioRhyme Expanded', serif;
         font-size: 4rem;
+        padding: 15px;
         margin: 0;
         color: black;
         background-color: rgba(171,215,52,0.7);
@@ -62,9 +68,11 @@ body {
 
         small{
 
+          display: block;
           color: black;
-          padding-left: 6vw;
+          padding-left: 8vw;
           font-family: 'BioRhyme Expanded', serif;
+          font-size: 2rem;
 
         }
 
@@ -72,11 +80,14 @@ body {
 
       ul{
 
+        margin-top: 3vh;
+
         li{
 
           border: 2px solid white;
           border-radius: 35px;
           background-color: #ABD734;
+          color: white !important;
 
           &:hover{
 
@@ -88,6 +99,12 @@ body {
               color: #2BA340;
 
             }
+
+          }
+          a{
+
+            color: white !important;
+            border-radius: 35px;
 
           }
 
