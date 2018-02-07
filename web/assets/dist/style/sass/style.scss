@@ -18,3 +18,67 @@ body {
 
 }
 
+/*Header Navigation*/
+
+.headerNav{
+
+  height: 210px;
+
+  >:last-child{
+
+    >:first-child{
+
+      img{
+
+        width: 8vw;
+
+      }
+
+    }
+
+    >:last-child{
+
+      padding-left: 4vw;
+      padding-top: 1vh;
+
+      h1{
+
+        font-size: 4rem;
+        margin: 0;
+
+      }
+
+      ul{
+
+        li{
+
+          border: 2px solid white;
+          border-radius: 35px;
+
+          &:hover{
+
+            background-color: white;
+
+            a{
+
+              color: #2BA340;
+
+            }
+
+          }
+
+        }
+
+        li+li {
+
+          margin-left: 13vw;
+
+        }
+
+      }
+
+    }
+
+  }
+
+}

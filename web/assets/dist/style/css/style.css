@@ -8,4 +8,25 @@ html {
 body {
   margin: 0 auto; }
 
+/*Header Navigation*/
+.headerNav {
+  height: 210px; }
+  .headerNav > :last-child > :first-child img {
+    width: 8vw; }
+  .headerNav > :last-child > :last-child {
+    padding-left: 4vw;
+    padding-top: 1vh; }
+    .headerNav > :last-child > :last-child h1 {
+      font-size: 4rem;
+      margin: 0; }
+    .headerNav > :last-child > :last-child ul li {
+      border: 2px solid white;
+      border-radius: 35px; }
+      .headerNav > :last-child > :last-child ul li:hover {
+        background-color: white; }
+        .headerNav > :last-child > :last-child ul li:hover a {
+          color: #2BA340; }
+    .headerNav > :last-child > :last-child ul li + li {
+      margin-left: 13vw; }
+
 /*# sourceMappingURL=style.css.map */
