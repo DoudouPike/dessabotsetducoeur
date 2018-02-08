@@ -40,4 +40,4 @@
 # PhpStorm
 .idea/
 
-web/assets/dist/style/\.sass-cache
+web/assets/dist/style/\.sass-cache/
