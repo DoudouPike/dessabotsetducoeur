@@ -9,7 +9,7 @@ imports:
 # https://symfony.com/doc/current/best_practices/configuration.html#application-related-configuration
 parameters:
     locale: fr
-    app.path.product_images: /uploads/images
+    app.path.advert_images: /uploads/images/adverts
 
 framework:
     #esi: ~
@@ -67,6 +67,15 @@ swiftmailer:
     password: '%mailer_password%'
     spool: { type: memory }
 
+# Vich uploader
+# https://symfony.com/doc/current/bundles/EasyAdminBundle/integration/vichuploaderbundle.html
+vich_uploader:
+    db_driver: orm
+    mappings:
+        advert_images:
+            uri_prefix: '%app.path.advert_images%'
+            upload_destination: '%kernel.root_dir%/../web/uploads/images/adverts'
+
 # EasyAdmin Configuration
 # https://symfony.com/doc/current/bundles/EasyAdminBundle/index.html
 easy_admin:
@@ -76,13 +85,19 @@ easy_admin:
             label: 'Chevaux'
             list:
                 title: "Liste des chevaux"
+                fields:
+                    - { property: 'images', type: 'image', base_path: '%app.path.advert_images%' }
+            show:
+                title: "Cheval"
+                fields:
+                    - { property: 'images', type: 'image', base_path: '%app.path.advert_images%' }
             form:
                 fields:
                     - { type: 'group', label: 'Informations "à l''adoption / à parrainer"', help: "Informations visible quand le cheval est à l'adoption ou à parrainer", css_class: 'col-sm-6' }
                     - { property: 'name', label: "Nom" }
                     - { property: 'category', label: "Catégories" }
                     - { property: 'descriptionInitial', label: "Description (à l'adoption / à parrainer)", type: 'ckeditor' }
-                    - { property: 'images', label: 'Images', css_class: 'js-krajee_file_input' }
+                    - { property: 'images', type: 'file' }
                     - { property: 'dateCreation', label: 'Date de création', type_options: { widget: 'single_text' }, css_class: 'js-datepicker' }
                     - { property: 'published', label: 'Publiée' }
                     - { type: 'group', label: 'Informations "adopté / parrainé"', help: 'Informations visible une fois le cheval adopté ou parrainé', css_class: 'col-sm-6' }
@@ -92,22 +107,10 @@ easy_admin:
                     - { property: 'descriptionDeceased', label: 'Description (décédé)', type: 'ckeditor' }
             new:
                 title: "Ajouter un cheval"
-                form_options: { validation_groups: ['Default', 'Adverts'] }
             edit:
                 title: "Éditer un cheval"
                 fields:
-                    - { type: 'group', label: 'Informations "à l''adoption / à parrainer"', help: "Informations visible quand le cheval est à l'adoption ou à parrainer", css_class: 'col-sm-6' }
-                    - { property: 'name', label: "Nom" }
-                    - { property: 'category', label: "Catégories" }
-                    - { property: 'descriptionInitial', label: "Description (à l'adoption / à parrainer)", type: 'ckeditor' }
-                    - { property: 'images', label: 'Images', css_class: 'js-krajee_file_input' }
-                    - { property: 'dateCreation', label: 'Date de création', type_options: { widget: 'single_text' }, css_class: 'js-datepicker' }
-                    - { property: 'published', label: 'Publiée' }
-                    - { type: 'group', label: 'Informations "adopté / parrainé"', help: 'Informations visible une fois le cheval adopté ou parrainé', css_class: 'col-sm-6' }
-                    - { property: 'descriptionComplete', label: "Description (adopté/parrainé)", type: 'ckeditor' }
-                    - { property: 'dateAdopted', label: "Date d'adoption", type_options: { widget: 'single_text' }, css_class: 'js-datepicker' }
-                    - { type: 'group', label: 'Informations "décédé"', help: 'Informations visible si le cheval décédé', css_class: 'col-sm-6' }
-                    - { property: 'descriptionDeceased', label: 'Description (décédé)', type: 'ckeditor' }
+                    - '-dateCreation'
             new:
                 title: "Ajouter un cheval"
                 form_options: { validation_groups: ['Default', 'Adverts'] }
@@ -124,12 +127,3 @@ easy_admin:
     site_name: 'DS&DC - Admin'
     design:
         brand_color: '#994DB6'
-
-# Vich uploader
-# https://symfony.com/doc/current/bundles/EasyAdminBundle/integration/vichuploaderbundle.html
-vich_uploader:
-    db_driver: orm
-    mappings:
-        product_images:
-            uri_prefix: '%app.path.product_images%'
-            upload_destination: '%kernel.root_dir%/../web/uploads/images'
