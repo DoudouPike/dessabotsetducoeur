@@ -14,10 +14,10 @@ class LoadCategories implements FixtureInterface
     {
         // Liste des noms de catégorie à ajouter
         $names = array(
-            'to_adopt',
-            'to_sponsor',
-            'adopted_sponsored',
-            'deceased'
+            'A adopter',
+            'A parrainer',
+            'Adopté ou parrainé',
+            'Décédé'
         );
 
         foreach ($names as $name) {

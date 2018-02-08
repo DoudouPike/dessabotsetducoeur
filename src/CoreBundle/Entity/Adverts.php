@@ -38,16 +38,23 @@ class Adverts
     /**
      * @var string
      *
-     * @ORM\Column(name="description_to_adopt", type="text", length=2047)
+     * @ORM\Column(name="description_initial", type="text", length=2047)
      */
-    private $descriptionToAdopt;
+    private $descriptionInitial;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="description_adopted", type="text", length=2047, nullable=true)
+     * @ORM\Column(name="description_complete", type="text", length=2047, nullable=true)
      */
-    private $descriptionAdopted;
+    private $descriptionComplete;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="description_deceased", type="text", length=2047, nullable=true)
+     */
+    private $descriptionDeceased;
 
     /**
      * @var string
@@ -135,51 +142,51 @@ class Adverts
     }
 
     /**
-     * Set descriptionToAdopt
-     *
-     * @param string $descriptionToAdopt
-     *
-     * @return Adverts
-     */
-    public function setDescriptionToAdopt($descriptionToAdopt)
-    {
-        $this->descriptionToAdopt = $descriptionToAdopt;
-
-        return $this;
-    }
-
-    /**
-     * Get descriptionToAdopt
-     *
      * @return string
      */
-    public function getDescriptionToAdopt()
+    public function getDescriptionInitial()
     {
-        return $this->descriptionToAdopt;
+        return $this->descriptionInitial;
     }
 
     /**
-     * Set descriptionAdopted
-     *
-     * @param string $descriptionAdopted
-     *
-     * @return Adverts
+     * @param string $descriptionInitial
      */
-    public function setDescriptionAdopted($descriptionAdopted)
+    public function setDescriptionInitial($descriptionInitial)
     {
-        $this->descriptionAdopted = $descriptionAdopted;
-
-        return $this;
+        $this->descriptionInitial = $descriptionInitial;
     }
 
     /**
-     * Get descriptionAdopted
-     *
      * @return string
      */
-    public function getDescriptionAdopted()
+    public function getDescriptionComplete()
     {
-        return $this->descriptionAdopted;
+        return $this->descriptionComplete;
+    }
+
+    /**
+     * @param string $descriptionComplete
+     */
+    public function setDescriptionComplete($descriptionComplete)
+    {
+        $this->descriptionComplete = $descriptionComplete;
+    }
+
+    /**
+     * @return string
+     */
+    public function getDescriptionDeceased()
+    {
+        return $this->descriptionDeceased;
+    }
+
+    /**
+     * @param string $descriptionDeceased
+     */
+    public function setDescriptionDeceased($descriptionDeceased)
+    {
+        $this->descriptionDeceased = $descriptionDeceased;
     }
 
     /**

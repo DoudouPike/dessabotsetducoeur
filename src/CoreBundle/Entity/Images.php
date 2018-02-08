@@ -3,12 +3,16 @@
 namespace CoreBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\HttpFoundation\File\File;
+use Vich\UploaderBundle\Mapping\Annotation as Vich;
 
 /**
  * Images
  *
  * @ORM\Table(name="images")
  * @ORM\Entity(repositoryClass="CoreBundle\Repository\ImagesRepository")
+ *
+ * @Vich\Uploadable()
  */
 class Images
 {
@@ -25,6 +29,8 @@ class Images
 
     /**
      * @var string
+     *
+     * @Vich\UploadableField(mapping="images", fileNameProperty="image")
      *
      * @ORM\Column(name="url", type="string", length=255)
      */
@@ -62,9 +68,17 @@ class Images
      *
      * @return Images
      */
-    public function setUrl($url)
+    public function setUrl(File $url = null)
     {
         $this->url = $url;
+
+        // VERY IMPORTANT:
+        // It is required that at least one field changes if you are using Doctrine,
+        // otherwise the event listeners won't be called and the file is lost
+        if ($image) {
+            // if 'updatedAt' is not defined in your entity, use another property
+            $this->updatedAt = new \DateTime('now');
+        }
 
         return $this;
     }
