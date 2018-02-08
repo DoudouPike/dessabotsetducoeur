@@ -77,6 +77,25 @@ easy_admin:
             list:
                 title: "Liste des chevaux"
             form:
+<<<<<<< Updated upstream
+                fields:
+                    - { type: 'group', label: 'Informations "à l''adoption / à parrainer"', help: "Informations visible quand le cheval est à l'adoption ou à parrainer", css_class: 'col-sm-6' }
+                    - { property: 'name', label: "Nom" }
+                    - { property: 'category', label: "Catégories" }
+                    - { property: 'descriptionInitial', label: "Description (à l'adoption / à parrainer)", type: 'ckeditor' }
+                    - { property: 'images', label: 'Images', css_class: 'js-krajee_file_input' }
+                    - { property: 'dateCreation', label: 'Date de création', type_options: { widget: 'single_text' }, css_class: 'js-datepicker' }
+                    - { property: 'published', label: 'Publiée' }
+                    - { type: 'group', label: 'Informations "adopté / parrainé"', help: 'Informations visible une fois le cheval adopté ou parrainé', css_class: 'col-sm-6' }
+                    - { property: 'descriptionComplete', label: "Description (adopté/parrainé)", type: 'ckeditor' }
+                    - { property: 'dateAdopted', label: "Date d'adoption", type_options: { widget: 'single_text' }, css_class: 'js-datepicker' }
+                    - { type: 'group', label: 'Informations "décédé"', help: 'Informations visible si le cheval décédé', css_class: 'col-sm-6' }
+                    - { property: 'descriptionDeceased', label: 'Description (décédé)', type: 'ckeditor' }
+            new:
+                title: "Ajouter un cheval"
+                form_options: { validation_groups: ['Default', 'Adverts'] }
+            edit:
+                title: "Éditer un cheval"
                 fields:
                     - { type: 'group', label: 'Informations "à l''adoption / à parrainer"', help: "Informations visible quand le cheval est à l'adoption ou à parrainer", css_class: 'col-sm-6' }
                     - { property: 'name', label: "Nom" }

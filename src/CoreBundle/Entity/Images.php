@@ -43,6 +43,13 @@ class Images
      */
     private $alt;
 
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="$update_at", type="datetime")
+     */
+    private $updateAt;
+
 
     /** ---------- FUNCTIONS ---------- **/
 

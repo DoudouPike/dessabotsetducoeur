@@ -52,7 +52,8 @@ class AdvertsType extends AbstractType
     public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults(array(
-            'data_class' => 'CoreBundle\Entity\Adverts'
+            'data_class' => 'CoreBundle\Entity\Adverts',
+            'validation_groups' => array('Default', 'Adverts_create'),
         ));
     }
 
