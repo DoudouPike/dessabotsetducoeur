@@ -77,7 +77,6 @@ easy_admin:
             list:
                 title: "Liste des chevaux"
             form:
-<<<<<<< Updated upstream
                 fields:
                     - { type: 'group', label: 'Informations "à l''adoption / à parrainer"', help: "Informations visible quand le cheval est à l'adoption ou à parrainer", css_class: 'col-sm-6' }
                     - { property: 'name', label: "Nom" }
