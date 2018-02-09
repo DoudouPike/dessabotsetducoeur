@@ -15,6 +15,18 @@ html {
 body {
 
   margin: 0 auto;
+  height: 100vh;
+  background-color: #FDFCE8;
+  -webkit-box-shadow: inset 0px 0px 57px 27px rgba(172,215,54,1);
+  -moz-box-shadow: inset 0px 0px 57px 27px rgba(172,215,54,1);
+  box-shadow: inset 0px 0px 57px 27px rgba(172,215,54,1);
+
+  >:first-child {
+
+    padding-top: 2vh;
+    height: 100vh;
+
+  }
 
 }
 
@@ -24,101 +36,219 @@ a {
 
 }
 
-/*Header Navigation*/
-.headerNav{
+hr{
 
-  height: 210px;
-  background-image: url("../../images/headerbg.png");
-  background-repeat: no-repeat;
-  background-size: cover;
+  border-color: #ABD734;
+  width: 95vw;
 
-  >:last-child{
+}
 
-    >:first-child{
+/*Utilities Class*/
+.blackBlur{
 
-      img{
+  -webkit-box-shadow: inset 0px 0px 13px 12px rgba(0,0,0,1);
+  -moz-box-shadow: inset 0px 0px 13px 12px rgba(0,0,0,1);
+  box-shadow: inset 0px 0px 13px 12px rgba(0,0,0,1);
 
-        width: 8vw;
-        background-color: #ABD734;
-        border: 1px solid white;
-        padding: 15px;
-        -webkit-box-shadow: inset 7px 10px 38px 15px rgba(255,255,255,1);
-        -moz-box-shadow: inset 7px 10px 38px 15px rgba(255,255,255,1);
-        box-shadow: inset 7px 10px 38px 15px rgba(255,255,255,1);
+}
+
+/*Bootstrap Custom*/
+
+.nav-pills{
+
+  li{
+
+    a{
+
+      border: 1px solid #C9E779;
+      color: black;
+
+      &:hover{
+
+        background-color: #C9E779;
 
       }
 
     }
 
-    >:last-child{
+  }
 
-      padding-left: 3vw;
-      padding-top: 1vh;
+  li.active{
 
-      h1{
+      a{
 
-        width: 70vw;
-        font-family: 'BioRhyme Expanded', serif;
-        font-size: 4rem;
-        padding: 15px;
-        margin: 0;
-        color: black;
-        background-color: rgba(171,215,52,0.7);
-        border-radius: 35px;
+        background-color: #ABD734 !important;
 
-        small{
+        &:hover{
 
-          display: block;
-          color: black;
-          padding-left: 8vw;
-          font-family: 'BioRhyme Expanded', serif;
-          font-size: 2rem;
+          background-color: #C9E779;
 
         }
 
       }
 
-      ul{
+  }
 
-        margin-top: 3vh;
+}
 
-        li{
+.nav-tabs {
 
-          border: 2px solid white;
-          border-radius: 35px;
+  border: none;
+
+}
+
+.tab-content {
+
+  border-top: 1px solid #ABD734;
+
+}
+
+/*Header Navigation*/
+
+header {
+
+  padding-left: 2vw;
+
+  .headerNav{
+
+    margin: 0;
+
+    >:last-child{
+
+      >:first-child{
+
+        img{
+
+          width: 8vw;
           background-color: #ABD734;
-          color: white !important;
+          border: 1px solid white;
+          padding: 15px;
+          -webkit-box-shadow: inset 7px 10px 38px 15px rgba(253,252,232,1);
+          -moz-box-shadow: inset 7px 10px 38px 15px rgba(253,252,232,1);
+          box-shadow: inset 7px 10px 38px 15px rgba(253,252,232,1);
 
-          &:hover{
+        }
 
-            background-color: white;
-            border: 2px solid #2BA340;
+      }
 
+      >:last-child{
+
+        padding-left: 3vw;
+        padding-top: 1vh;
+
+        h1{
+
+          width: 80vw;
+          font-family: 'BioRhyme Expanded', serif;
+          font-size: 4rem;
+          padding: 15px;
+          margin: 0;
+          color: black;
+          background-color: rgba(171,215,52,0.7);
+          border-radius: 10px;
+
+          small{
+
+            display: block;
+            color: black;
+            padding-left: 17vw;
+            font-family: 'BioRhyme Expanded', serif;
+            font-size: 2rem;
+
+          }
+
+        }
+
+        ul{
+
+          margin-top: 3vh;
+
+          li{
+
+            border: 2px solid white;
+            border-radius: 10px;
+            background-color: #ABD734;
+            color: white !important;
+
+            &:hover{
+
+              background-color: white;
+              border: 2px solid #2BA340;
+
+              a{
+
+                color: #2BA340 !important;
+
+              }
+
+            }
             a{
 
-              color: #2BA340;
+              color: white !important;
+              border-radius: 10px;
 
             }
 
           }
-          a{
 
-            color: white !important;
-            border-radius: 35px;
+          li+li {
+
+            margin-left: 13vw;
 
           }
-
-        }
-
-        li+li {
-
-          margin-left: 13vw;
 
         }
 
       }
 
     }
+
+  }
+
+}
+
+/*Facebook & Paypal aside*/
+
+.asideNews {
+
+  border-left: 1px solid #ABD734;
+
+    table{
+
+      margin-bottom: 2vh;
+      padding-top: 4vh;
+
+    }
+
+    iframe {
+
+      margin-left: 2vw;
+
+    }
+
+}
+
+/*Main Pages*/
+
+.mainContent {
+
+  padding-left: 3vw;
+
+}
+
+/*Home page*/
+
+.homeContent {
+
+  >ul{
+
+    padding-left: 1vw;
+
+   li+li {
+
+     margin-left: 26.7vw;
+
+   }
 
   }
 

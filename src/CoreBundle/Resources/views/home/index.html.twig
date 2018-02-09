@@ -1,19 +1,27 @@
 {% extends 'CoreBundle:common:layout.html.twig' %}
 {% block body %}
-    <ul class="nav nav-pills ct-green no-border">
-        <li class="active"><a>Présentation</a></li>
-        <li><a>Histoire</a></li>
-        <li><a>Droit animal</a></li>
-    </ul>
-    <div class="tab_content">
-        <div id="presentation" class="presentation fadein">
-            {% include 'CoreBundle:home:presentation.html.twig' %}
-        </div>
-        <div class="histoire">
-            {% include 'CoreBundle:home:story.html.twig' %}
-        </div>
-        <div class="droit-animal">
-            {% include 'CoreBundle:home:animal-right.html.twig' %}
+    <div class="homeContent">
+        <ul class="nav nav-tabs nav-pills" role="tablist">
+            <li class="active">
+                <a href="#presentation" aria-controls="presentation" role="tab" data-toggle="tab">Présentation</a>
+            </li>
+            <li>
+                <a href="#story" aria-controls="story" role="tab" data-toggle="tab">Histoire</a>
+            </li>
+            <li>
+                <a href="#animalRight" aria-controls="animalRight" role="tab" data-toggle="tab">Droit animal</a>
+            </li>
+        </ul>
+        <div class="tab-content">
+            <div id="presentation" class="tab-pane fade in active" role="tabpanel">
+                {% include 'CoreBundle:home:presentation.html.twig' %}
+            </div>
+            <div id="story" class="tab-pane fade" role="tabpanel">
+                {% include 'CoreBundle:home:story.html.twig' %}
+            </div>
+            <div id="animalRight" class="tab-pane fade" role="tabpanel">
+                {% include 'CoreBundle:home:animal-right.html.twig' %}
+            </div>
         </div>
     </div>
 {% endblock %}

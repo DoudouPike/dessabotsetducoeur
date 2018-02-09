@@ -10,31 +10,46 @@
         <link href="https://fonts.googleapis.com/css?family=BioRhyme+Expanded" rel="stylesheet">
         <link rel="stylesheet" href="{{ asset('assets/dist/style/css/style.css') }}" type="text/css">
     {% endblock %}
-    {% block javascripts %}
         <script src="{{ asset('assets/plugins/fontawesome-5.0.6/svg-with-js/js/fontawesome-all.js') }}"></script>
         <script src="{{ asset('assets/plugins/jquery/jquery-1.10.2.js') }}"></script>
         <script src="{{ asset('assets/plugins/jquery/jquery-ui.custom.min.js') }}"></script>
         <script src={{ asset('assets/plugins/bootstrap3/js/bootstrap.min.js') }}></script>
-    {% endblock %}
+        <script src={{ asset('assets/dist/js/bootstrap.js') }}></script>
 </head>
 <body>
-    <div class="container-fluid">
+    <div class="container-fluid blackBlur">
         <header>
-            <div id="navbar">
-                {% include 'CoreBundle:common:menu.html.twig' %}
-            </div>
+            {% include 'CoreBundle:common:menu.html.twig' %}
         </header>
-        <div class="container">
-            <div class="row">
-                <div class="col-md-offset-1 col-md-10 col-md-offset-1">
-                    {% block body %}
-                    {% endblock %}
-                </div>
+        <hr>
+        <main>
+            <div class="col-lg-9 mainContent">
+                {% block body %}
+                {% endblock %}
             </div>
-            <footer>
-                <p>© {{ 'now'|date('Y') }}</p>
-            </footer>
-        </div>
+            <aside class="col-lg-3 asideNews">
+                <!-- PayPal Logo -->
+                <table border="0" cellpadding="10" cellspacing="0" align="center">
+                    <tr>
+                        <td align="center"></td>
+                    </tr>
+                    <tr>
+                        <td align="center">
+                            <a href="https://www.paypal.com/webapps/mpp/paypal-popup" title="How PayPal Works" onclick="javascript:window.open('https://www.paypal.com/webapps/mpp/paypal-popup','WIPaypal','toolbar=no, location=no, directories=no, status=no, menubar=no, scrollbars=yes, resizable=yes, width=1060, height=700'); return false;">
+                                <img src="https://www.paypalobjects.com/webstatic/mktg/logo/bdg_now_accepting_pp_2line_w.png" border="0" alt="Now Accepting PayPal">
+                            </a>
+                            <div style="text-align:center">
+                                <a href="https://www.paypal.com/webapps/mpp/how-paypal-works">
+                                    <font size="2" face="Arial" color="#0079CD">How PayPal Works</font>
+                                </a>
+                            </div>
+                        </td>
+                    </tr>
+                </table><!-- PayPal Logo -->
+                <iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fdessabotsetducoeur68%2F&tabs=timeline&width=340&height=500&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=false&appId" width="340" height="500" style="border:none;overflow:scroll" scrolling="yes" frameborder="0" allowTransparency="true"></iframe>
+            </aside>
+        </main>
     </div>
+    <script src={{ asset('assets/dist/js/main.js') }}></script>
 </body>
 </html>

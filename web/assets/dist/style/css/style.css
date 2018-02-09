@@ -6,59 +6,112 @@ html {
   font-size: 62.5%; }
 
 body {
-  margin: 0 auto; }
+  margin: 0 auto;
+  height: 100vh;
+  background-color: #FDFCE8;
+  -webkit-box-shadow: inset 0px 0px 57px 27px #acd736;
+  -moz-box-shadow: inset 0px 0px 57px 27px #acd736;
+  box-shadow: inset 0px 0px 57px 27px #acd736; }
+  body > :first-child {
+    padding-top: 2vh;
+    height: 100vh; }
 
 a {
   text-decoration: none; }
 
+hr {
+  border-color: #ABD734;
+  width: 95vw; }
+
+/*Utilities Class*/
+.blackBlur {
+  -webkit-box-shadow: inset 0px 0px 13px 12px black;
+  -moz-box-shadow: inset 0px 0px 13px 12px black;
+  box-shadow: inset 0px 0px 13px 12px black; }
+
+/*Bootstrap Custom*/
+.nav-pills li a {
+  border: 1px solid #C9E779;
+  color: black; }
+  .nav-pills li a:hover {
+    background-color: #C9E779; }
+.nav-pills li.active a {
+  background-color: #ABD734 !important; }
+  .nav-pills li.active a:hover {
+    background-color: #C9E779; }
+
+.nav-tabs {
+  border: none; }
+
+.tab-content {
+  border-top: 1px solid #ABD734; }
+
 /*Header Navigation*/
-.headerNav {
-  height: 210px;
-  background-image: url("../../images/headerbg.png");
-  background-repeat: no-repeat;
-  background-size: cover; }
-  .headerNav > :last-child > :first-child img {
-    width: 8vw;
-    background-color: #ABD734;
-    border: 1px solid white;
-    padding: 15px;
-    -webkit-box-shadow: inset 7px 10px 38px 15px white;
-    -moz-box-shadow: inset 7px 10px 38px 15px white;
-    box-shadow: inset 7px 10px 38px 15px white; }
-  .headerNav > :last-child > :last-child {
-    padding-left: 3vw;
-    padding-top: 1vh; }
-    .headerNav > :last-child > :last-child h1 {
-      width: 70vw;
-      font-family: 'BioRhyme Expanded', serif;
-      font-size: 4rem;
+header {
+  padding-left: 2vw; }
+  header .headerNav {
+    margin: 0; }
+    header .headerNav > :last-child > :first-child img {
+      width: 8vw;
+      background-color: #ABD734;
+      border: 1px solid white;
       padding: 15px;
-      margin: 0;
-      color: black;
-      background-color: rgba(171, 215, 52, 0.7);
-      border-radius: 35px; }
-      .headerNav > :last-child > :last-child h1 small {
-        display: block;
-        color: black;
-        padding-left: 8vw;
+      -webkit-box-shadow: inset 7px 10px 38px 15px #fdfce8;
+      -moz-box-shadow: inset 7px 10px 38px 15px #fdfce8;
+      box-shadow: inset 7px 10px 38px 15px #fdfce8; }
+    header .headerNav > :last-child > :last-child {
+      padding-left: 3vw;
+      padding-top: 1vh; }
+      header .headerNav > :last-child > :last-child h1 {
+        width: 80vw;
         font-family: 'BioRhyme Expanded', serif;
-        font-size: 2rem; }
-    .headerNav > :last-child > :last-child ul {
-      margin-top: 3vh; }
-      .headerNav > :last-child > :last-child ul li {
-        border: 2px solid white;
-        border-radius: 35px;
-        background-color: #ABD734;
-        color: white !important; }
-        .headerNav > :last-child > :last-child ul li:hover {
-          background-color: white;
-          border: 2px solid #2BA340; }
-          .headerNav > :last-child > :last-child ul li:hover a {
-            color: #2BA340; }
-        .headerNav > :last-child > :last-child ul li a {
-          color: white !important;
-          border-radius: 35px; }
-      .headerNav > :last-child > :last-child ul li + li {
-        margin-left: 13vw; }
+        font-size: 4rem;
+        padding: 15px;
+        margin: 0;
+        color: black;
+        background-color: rgba(171, 215, 52, 0.7);
+        border-radius: 10px; }
+        header .headerNav > :last-child > :last-child h1 small {
+          display: block;
+          color: black;
+          padding-left: 17vw;
+          font-family: 'BioRhyme Expanded', serif;
+          font-size: 2rem; }
+      header .headerNav > :last-child > :last-child ul {
+        margin-top: 3vh; }
+        header .headerNav > :last-child > :last-child ul li {
+          border: 2px solid white;
+          border-radius: 10px;
+          background-color: #ABD734;
+          color: white !important; }
+          header .headerNav > :last-child > :last-child ul li:hover {
+            background-color: white;
+            border: 2px solid #2BA340; }
+            header .headerNav > :last-child > :last-child ul li:hover a {
+              color: #2BA340 !important; }
+          header .headerNav > :last-child > :last-child ul li a {
+            color: white !important;
+            border-radius: 10px; }
+        header .headerNav > :last-child > :last-child ul li + li {
+          margin-left: 13vw; }
+
+/*Facebook & Paypal aside*/
+.asideNews {
+  border-left: 1px solid #ABD734; }
+  .asideNews table {
+    margin-bottom: 2vh;
+    padding-top: 4vh; }
+  .asideNews iframe {
+    margin-left: 2vw; }
+
+/*Main Pages*/
+.mainContent {
+  padding-left: 3vw; }
+
+/*Home page*/
+.homeContent > ul {
+  padding-left: 1vw; }
+  .homeContent > ul li + li {
+    margin-left: 26.7vw; }
 
 /*# sourceMappingURL=style.css.map */
