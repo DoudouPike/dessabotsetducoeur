@@ -1,3 +1,9 @@
+/*Color*/
+
+$greenMainTheme: #ABD734;
+$greenPastelMainTheme: #C9E779;
+$backgroundColorMainTheme: #FDFCE8;
+
 /*General*/
 
 * {
@@ -16,10 +22,10 @@ body {
 
   margin: 0 auto;
   height: 100vh;
-  background-color: #FDFCE8;
-  -webkit-box-shadow: inset 0px 0px 57px 27px rgba(172,215,54,1);
-  -moz-box-shadow: inset 0px 0px 57px 27px rgba(172,215,54,1);
-  box-shadow: inset 0px 0px 57px 27px rgba(172,215,54,1);
+  background-color: $backgroundColorMainTheme;
+  -webkit-box-shadow: inset 0px 0px 57px 27px $greenMainTheme;
+  -moz-box-shadow: inset 0px 0px 57px 27px $greenMainTheme;
+  box-shadow: inset 0px 0px 57px 27px $greenMainTheme;
 
   >:first-child {
 
@@ -38,7 +44,7 @@ a {
 
 hr{
 
-  border-color: #ABD734;
+  border-color: $greenMainTheme;
   width: 95vw;
 
 }
@@ -46,9 +52,9 @@ hr{
 /*Utilities Class*/
 .blackBlur{
 
-  -webkit-box-shadow: inset 0px 0px 13px 12px rgba(0,0,0,1);
-  -moz-box-shadow: inset 0px 0px 13px 12px rgba(0,0,0,1);
-  box-shadow: inset 0px 0px 13px 12px rgba(0,0,0,1);
+  -webkit-box-shadow: inset 0px 0px 13px 12px black;
+  -moz-box-shadow: inset 0px 0px 13px 12px black;
+  box-shadow: inset 0px 0px 13px 12px black;
 
 }
 
@@ -60,12 +66,12 @@ hr{
 
     a{
 
-      border: 1px solid #C9E779;
+      border: 1px solid $greenPastelMainTheme;
       color: black;
 
       &:hover{
 
-        background-color: #C9E779;
+        background-color: $greenPastelMainTheme;
 
       }
 
@@ -77,11 +83,11 @@ hr{
 
       a{
 
-        background-color: #ABD734 !important;
+        background-color: $greenMainTheme !important;
 
         &:hover{
 
-          background-color: #C9E779;
+          background-color: $greenPastelMainTheme;
 
         }
 
@@ -99,7 +105,7 @@ hr{
 
 .tab-content {
 
-  border-top: 1px solid #ABD734;
+  border-top: 1px solid $greenPastelMainTheme;
 
 }
 
@@ -120,12 +126,12 @@ header {
         img{
 
           width: 8vw;
-          background-color: #ABD734;
+          background-color: $greenMainTheme;
           border: 1px solid white;
           padding: 15px;
-          -webkit-box-shadow: inset 7px 10px 38px 15px rgba(253,252,232,1);
-          -moz-box-shadow: inset 7px 10px 38px 15px rgba(253,252,232,1);
-          box-shadow: inset 7px 10px 38px 15px rgba(253,252,232,1);
+          -webkit-box-shadow: inset 7px 10px 38px 15px $backgroundColorMainTheme;
+          -moz-box-shadow: inset 7px 10px 38px 15px $backgroundColorMainTheme;
+          box-shadow: inset 7px 10px 38px 15px $backgroundColorMainTheme;
 
         }
 
@@ -167,7 +173,7 @@ header {
 
             border: 2px solid white;
             border-radius: 10px;
-            background-color: #ABD734;
+            background-color: $greenMainTheme;
             color: white !important;
 
             &:hover{
@@ -211,7 +217,7 @@ header {
 
 .asideNews {
 
-  border-left: 1px solid #ABD734;
+  border-left: 1px solid $greenMainTheme;
 
     table{
 
@@ -249,6 +255,46 @@ header {
      margin-left: 26.7vw;
 
    }
+
+  }
+
+  .tab-content {
+
+    padding-top: 2vh;
+
+    >div:nth-of-type(1){
+
+        img {
+
+          float: left;
+          width: 18vw;
+          margin-right: 2vw;
+          padding: 15px;
+          border: 1px solid $greenMainTheme;
+
+        }
+
+      blockquote{
+
+        padding-top: 10vh;
+        border-bottom: 1px solid $greenMainTheme;
+        border-left: none;
+
+      }
+
+      p:nth-of-type(1){
+
+        padding-top: 2vh;
+
+      }
+
+      p+p {
+
+        padding-top: 15vh;
+
+      }
+
+    }
 
   }
 
